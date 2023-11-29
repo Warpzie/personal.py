@@ -1,0 +1,29 @@
+import tkinter
+import random
+canvas = tkinter.Canvas(width=1000, height=1000)
+canvas.pack()
+
+x = 10
+xx = x
+y = 10
+s = 50
+midSpaceLupen = 5
+midSpaceKvet = 10
+farbaStred = ("light goldenrod")
+pocetA = 998
+pocetB = 998
+kvetSize = 2*s+midSpaceLupen
+for j in range (pocetB//kvetSize):
+    for i in range (pocetA//kvetSize):
+        farbaLupene = random.choice(("dark orchid3", "dark orchid1", "dark orchid4"))
+        canvas.create_oval(x+midSpaceLupen,y,x+s+midSpaceLupen,y+s,fill=farbaLupene)
+        canvas.create_oval(x+s+midSpaceKvet,y,x+(2*s)+midSpaceKvet,y+s,fill=farbaLupene)
+        canvas.create_oval(x+midSpaceLupen,y+s+midSpaceLupen,x+s+midSpaceLupen,y+midSpaceLupen+(2*s),fill=farbaLupene)
+        canvas.create_oval(x+s+midSpaceKvet,y+s+midSpaceLupen,x+(2*s)+midSpaceKvet,y+midSpaceLupen+(2*s),fill=farbaLupene)
+
+        canvas.create_oval(x+(s//2)+midSpaceLupen + 2,y+(s//2)+midSpaceLupen-2,x+s+(s//2)+midSpaceLupen + 2,y+s+(s//2)+midSpaceLupen-2,fill=farbaStred)
+
+        x = x+kvetSize+midSpaceKvet
+    y = y+kvetSize+midSpaceKvet
+    x = xx
+canvas.mainloop()
